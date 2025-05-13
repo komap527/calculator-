@@ -1,0 +1,69 @@
+.calculator {
+    width: 240px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #a3c9d0; /* Голубой фон калькулятора */
+    border: 2px solid #87a9b0;
+    border-radius: 10px;
+    box-shadow: 20px 8px 16px rgba(0, 0, 0, 0.4); /* Тень для объема */
+}
+
+#display {
+    width: 65%;
+    height: 25px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #87a9b0;
+    background-color: #b0c4de; /* Серо-голубой фон дисплея */
+    border-radius: 5px;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0	, 0.5); /* Внутренняя тень */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid #87a9b0;
+    border-radius: 5px;
+    background-color: #ffffgg; /* Белый фон для цифр */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); /* Тень для кнопок */
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s; /* Анимация нажатия */
+	
+}
+
+button:active {
+    transform: translateY(2px); /* Эффект нажатия */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Уменьшение тени при нажатии */
+}
+
+/* Цвета для операторов */
+button[data-value="/"],
+button[data-value="*"],
+button[data-value="-"],
+button[data-value="+"] {
+    background-color: #f4c2c2; /* Розовый для операторов */
+}
+
+/* Кнопка "C" */
+button[data-value="C"] {
+    background-color: #ff9999; /* Красный для сброса */
+}
+
+/* Кнопка "=" */
+button[data-value="="] {
+    background-color: #ffff99; /* Желтый для равно */
+}
+
+/* Убираем стандартный фокус */
+button:focus {
+    outline: none;
+}
