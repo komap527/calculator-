@@ -8,6 +8,9 @@ document.querySelectorAll('button').forEach(button => {
         const value = button.textContent;
         
         if (value >= '0' && value <= '9' || value === '.') {
+			if (value === '.' && currentInput.includes('.')) {
+			return; 
+			}
             currentInput += value;
             display.value = currentInput;
         } else if (value === '+' || value === '-' || value === '*' || value === '/') {
